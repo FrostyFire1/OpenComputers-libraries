@@ -1,4 +1,5 @@
-function listMethods(component)
+local util = {}
+function util.listMethods(component)
     if type(component) ~= "table" then
         return nil,"Attempted to call table function with" .. type(component) end
 
@@ -8,7 +9,7 @@ function listMethods(component)
 
 end
 
-function getItemNames(component, side)
+function util.getItemNames(component, side)
     if type(component) ~= "table" then
         return nil, "Component is " .. type(component) .. "And not a table" end
     if type(side) ~= "number" then
@@ -19,3 +20,5 @@ function getItemNames(component, side)
         end
     end
 end
+
+return util
